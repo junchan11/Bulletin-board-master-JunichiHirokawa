@@ -11,8 +11,15 @@
 |
 */
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/top','PostsController@index');
+Route::get('/login', [App\Http\Controllers\Auth\Login\LoginController::class,'login']);
+Route::post('/login', [App\Http\Controllers\Auth\Login\LoginController::class,'login']);
+
+Route::get('/top',[App\Http\Controllers\User\Post\PostsController::class,'index']);
