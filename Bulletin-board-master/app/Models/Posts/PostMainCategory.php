@@ -2,6 +2,9 @@
 
 namespace App\Models\Posts;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\Eloquent\Model;
 
 class PostMainCategory extends Model
@@ -11,4 +14,11 @@ class PostMainCategory extends Model
     protected $fillable = [
         'main_category',
     ];
+
+
+
+    public function sub()
+    {
+        return $this->hasMany(PostSubCategory::class);
+    }
 }

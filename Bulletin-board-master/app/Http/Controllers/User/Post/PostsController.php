@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Post;
+use App\Models\Posts\PostMainCategory;
 
 class PostsController extends Controller
 {
@@ -16,5 +17,13 @@ class PostsController extends Controller
 
     return view ('posts.index',['list'=>$list]);
 }
+
+    public function categories(){
+
+        $lists = PostMainCategory::get();
+
+        return view ('posts.categories',compact('lists'));
+
+    }
 
 }

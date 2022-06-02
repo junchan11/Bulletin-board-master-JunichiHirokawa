@@ -23,6 +23,7 @@
 <body>
         <div id="container">
             @yield('content')
+
         </div >
 
         <footer>
