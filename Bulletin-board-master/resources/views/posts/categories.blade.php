@@ -29,7 +29,7 @@
             <div class ="side-categories-list">
                 @foreach($subs as $sub)
                         <p>{{$sub->main_category}}</p>
-                        <p>{{$sub->sub->sub_category}}</p>
+                        <p>{{$sub->sub_category}}</p>
                 @endforeach
             </div>
         <p></p>
