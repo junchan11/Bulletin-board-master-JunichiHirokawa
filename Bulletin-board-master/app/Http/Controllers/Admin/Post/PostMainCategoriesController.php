@@ -19,7 +19,7 @@ class PostMainCategoriesController extends Controller
             'main_category' => $main
         ]);
 
-        return view('posts.categories');
+        return redirect('/categories');
 
     }
 

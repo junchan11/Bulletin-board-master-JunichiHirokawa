@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Models\Posts\PostMainCategory;
+use App\Models\Posts\PostSubCategory;
 
 class PostsController extends Controller
 {
@@ -21,8 +22,10 @@ class PostsController extends Controller
     public function categories(){
 
         $lists = PostMainCategory::get();
+        $subs = PostSubCategory::with('main')->get();//with('リレーション名')
 
-        return view ('posts.categories',compact('lists'));
+
+        return view ('posts.categories',compact('lists','subs'));
 
     }
 

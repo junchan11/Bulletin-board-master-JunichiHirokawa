@@ -13,13 +13,16 @@ class PostSubCategoriesController extends Controller
     //
 
     public function newSub(Request $request ){
-        $usb = $request->input('sub-categories');
+        $sub = $request->input('sub-categories');
+        $id = $request->input('main-categories-id');
+
 
         PostSubCategory::create([
-            'sub_category' => $sub
+            'sub_category' => $sub,
+            'post_main_category_id' => $id
         ]);
 
-        return view('posts.categories');
+        return redirect('/categories');
 
     }
 }

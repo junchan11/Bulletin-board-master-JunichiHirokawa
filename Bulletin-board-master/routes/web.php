@@ -29,5 +29,7 @@ Route::get('/top',[App\Http\Controllers\User\Post\PostsController::class,'index'
 
 Route::get('/categories',[App\Http\Controllers\User\Post\PostsController::class,'categories']);
 Route::post('/new-main-categories',[App\Http\Controllers\Admin\Post\PostMainCategoriesController::class,'newMain']);
+Route::post('/new-main-categories',[App\Http\Controllers\Admin\Post\PostSubCategoriesController::class,'newSub']);
+
 
 Route::get('/logout', [App\Http\Controllers\Auth\Login\LoginController::class,'logout']);
